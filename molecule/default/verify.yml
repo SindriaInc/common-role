@@ -1,0 +1,21 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Install pkgs
+    apt: 
+      pkg: 
+      - htop
+      - vim
+      - curl
+      state: latest
+    register: pkgs_status
+ 
+  - name: test installed pkgs
+    assert:
+      that: 
+        - not pkgs_status.changed
+
+

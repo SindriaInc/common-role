@@ -1,0 +1,21 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    sys_update: True
+    common_pkgs: 
+      - sudo
+      - openssl
+      - ca-certificates
+      - htop
+      - git
+      - curl
+      - wget
+      - vim
+      - bzip2
+
+  
+  tasks:
+    - name: "Include common-role"
+      include_role:
+        name: "common-role"

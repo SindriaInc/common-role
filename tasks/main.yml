@@ -1,0 +1,11 @@
+---
+ 
+  - name: Upgrade System
+    include_tasks: "update_system.yml" 
+    when:  sys_update is defined and sys_update == True
+
+  - name: Install common pkgs
+    apt: 
+      pkg: "{{common_pkgs}}"
+      state: latest
+    

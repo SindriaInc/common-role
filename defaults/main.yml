@@ -1,0 +1,16 @@
+---
+# defaults file for common-role
+  common_pkgs: 
+    - sudo
+    - openssl
+    - ca-certificates
+    - htop
+    - git
+    - curl
+    - wget
+    - vim
+    - bzip2
+    - unzip
+    - net-tools
+  
+  sys_update: True
